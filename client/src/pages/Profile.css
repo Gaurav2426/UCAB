@@ -1,0 +1,128 @@
+.profile-page {
+  padding: 1.5rem;
+  height: 100%;
+  overflow-y: auto;
+  background: linear-gradient(180deg, rgba(99, 102, 241, 0.04) 0%, transparent 200px);
+}
+
+/* User card */
+.profile-card {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.5rem;
+  border-radius: var(--radius-xl);
+  margin-bottom: 1.75rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  position: relative;
+  overflow: hidden;
+}
+
+.profile-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--accent-gradient);
+}
+
+.profile-avatar {
+  width: 68px;
+  height: 68px;
+  background: var(--accent-gradient);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--fs-2xl);
+  font-weight: 800;
+  color: white;
+  flex-shrink: 0;
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.35);
+}
+
+.profile-info h2 {
+  font-size: var(--fs-xl);
+  font-weight: 700;
+}
+
+.profile-detail {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  margin-top: 0.3rem;
+}
+
+/* Menu */
+.profile-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 2rem;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-lg);
+  transition: all var(--transition);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(99, 102, 241, 0.15);
+  transform: translateX(4px);
+}
+
+.menu-icon {
+  width: 42px;
+  height: 42px;
+  background: var(--accent-subtle);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-hover);
+  flex-shrink: 0;
+}
+
+.menu-text {
+  flex: 1;
+}
+
+.menu-label {
+  display: block;
+  font-weight: 600;
+  font-size: var(--fs-md);
+}
+
+.menu-desc {
+  display: block;
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+  margin-top: 0.15rem;
+}
+
+.menu-chevron {
+  color: var(--text-muted);
+  transition: transform var(--transition);
+}
+
+.menu-item:hover .menu-chevron {
+  transform: translateX(3px);
+  color: var(--accent);
+}
+
+.logout-btn {
+  border-radius: var(--radius-lg);
+}

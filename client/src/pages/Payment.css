@@ -1,0 +1,86 @@
+.payment-page {
+  padding: 1.5rem;
+  height: 100%;
+  overflow-y: auto;
+  background: linear-gradient(180deg, rgba(99, 102, 241, 0.04) 0%, transparent 200px);
+}
+
+.payment-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-bottom: 1.75rem;
+}
+
+.payment-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.15rem 1.25rem;
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all var(--transition);
+  border: 2px solid transparent;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.payment-card.active {
+  border-color: var(--accent);
+  background: var(--accent-subtle);
+  box-shadow: 0 2px 16px rgba(99, 102, 241, 0.12);
+}
+
+.payment-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  transform: translateX(4px);
+}
+
+.pm-icon {
+  width: 46px;
+  height: 46px;
+  background: var(--accent-subtle);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-hover);
+  flex-shrink: 0;
+}
+
+.pm-info {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex: 1;
+}
+
+.pm-name {
+  font-weight: 600;
+  font-size: var(--fs-md);
+}
+
+.payment-security {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  padding: 1.25rem;
+  border-radius: var(--radius-lg);
+  background: rgba(52, 211, 153, 0.04);
+  border: 1px solid rgba(52, 211, 153, 0.1);
+  color: var(--green);
+}
+
+.payment-security div {
+  flex: 1;
+}
+
+.payment-security strong {
+  display: block;
+  font-size: var(--fs-md);
+  margin-bottom: 0.25rem;
+}
+
+.payment-security p {
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+}

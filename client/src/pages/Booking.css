@@ -1,0 +1,145 @@
+.booking-page {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.booking-map {
+  height: 40%;
+  min-height: 200px;
+  flex-shrink: 0;
+}
+
+.booking-marker { background: none !important; border: none !important; }
+.bm-dot { font-size: 22px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5)); }
+
+/* ——— Panel ——— */
+.booking-panel {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.25rem 1.5rem 1.5rem;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  margin-top: -16px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Route Summary */
+.route-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-glass);
+  margin-bottom: 1rem;
+}
+
+.route-point {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+}
+
+.route-line-v {
+  width: 2px;
+  height: 16px;
+  background: var(--border-glass);
+  margin-left: 5px;
+}
+
+.panel-title {
+  font-size: var(--fs-lg);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+/* ——— Cab Cards ——— */
+.cab-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-bottom: 1rem;
+}
+
+.cab-card {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all var(--transition);
+  border: 2px solid transparent;
+}
+
+.cab-card:hover {
+  background: var(--bg-card-hover);
+}
+
+.cab-card.selected {
+  border-color: var(--accent);
+  background: rgba(99, 102, 241, 0.08);
+  box-shadow: 0 0 16px rgba(99, 102, 241, 0.15);
+}
+
+.cab-card-icon {
+  font-size: 1.75rem;
+  width: 44px;
+  text-align: center;
+}
+
+.cab-card-info {
+  flex: 1;
+}
+
+.cab-card-name {
+  font-weight: 600;
+  font-size: var(--fs-md);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.popular-tag {
+  background: var(--accent-gradient);
+  color: white;
+  font-size: 0.65rem;
+  padding: 0.1rem 0.45rem;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.cab-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--text-muted);
+  font-size: var(--fs-xs);
+  margin-top: 0.2rem;
+}
+
+.cab-card-fare {
+  text-align: right;
+}
+
+.fare-amount {
+  display: block;
+  font-size: var(--fs-lg);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.fare-dist {
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+}
+
+.book-btn {
+  margin-top: 0.5rem;
+}
