@@ -1,5 +1,6 @@
 import { createContext, useContext, useState } from 'react'
 import { useAuth } from './AuthContext'
+import API_BASE from '../utils/api'
 
 const RideContext = createContext(null)
 
@@ -10,7 +11,7 @@ export function RideProvider({ children }) {
 
   const fetchNearbyCabs = async (lat, lng) => {
     try {
-      const res = await fetch(`/api/cabs/nearby?lat=${lat}&lng=${lng}`)
+      const res = await fetch(`${API_BASE}/api/cabs/nearby?lat=${lat}&lng=${lng}`)
       const data = await res.json()
       setNearbyCabs(data)
       return data
@@ -21,13 +22,13 @@ export function RideProvider({ children }) {
 
   const getEstimates = async (pickupLat, pickupLng, dropLat, dropLng) => {
     const res = await fetch(
-      `/api/cabs/estimate?pickupLat=${pickupLat}&pickupLng=${pickupLng}&dropLat=${dropLat}&dropLng=${dropLng}`
+      `${API_BASE}/api/cabs/estimate?pickupLat=${pickupLat}&pickupLng=${pickupLng}&dropLat=${dropLat}&dropLng=${dropLng}`
     )
     return res.json()
   }
 
   const bookRide = async (rideData) => {
-    const res = await fetch('/api/rides', {
+    const res = await fetch(`${API_BASE}/api/rides`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -42,7 +43,7 @@ export function RideProvider({ children }) {
   }
 
   const cancelRide = async (rideId) => {
-    const res = await fetch(`/api/rides/${rideId}/cancel`, {
+    const res = await fetch(`${API_BASE}/api/rides/${rideId}/cancel`, {
       method: 'PATCH',
       headers: { Authorization: `Bearer ${token}` },
     })
@@ -52,7 +53,7 @@ export function RideProvider({ children }) {
   }
 
   const completeRide = async (rideId) => {
-    const res = await fetch(`/api/rides/${rideId}/complete`, {
+    const res = await fetch(`${API_BASE}/api/rides/${rideId}/complete`, {
       method: 'PATCH',
       headers: { Authorization: `Bearer ${token}` },
     })
@@ -62,7 +63,7 @@ export function RideProvider({ children }) {
   }
 
   const fetchHistory = async () => {
-    const res = await fetch('/api/rides', {
+    const res = await fetch(`${API_BASE}/api/rides`, {
       headers: { Authorization: `Bearer ${token}` },
     })
     return res.json()
